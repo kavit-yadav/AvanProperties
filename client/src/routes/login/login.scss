@@ -1,0 +1,134 @@
+@use "../../responsive.scss";
+
+.login {
+  background: linear-gradient(135deg, #0b0c1e, #131331);
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  color: #f2f2f2;
+
+  .formContainer {
+    border-radius: 12px;
+    padding: 30px 40px;
+    width: 420px;
+    background-color: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(12px);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.7);
+
+    h1 {
+      font-size: 36px;
+      text-align: center;
+      font-weight: 700;
+      background: linear-gradient(90deg, #b78cf8, #6a7bfd);
+      background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .inputbox {
+      position: relative;
+      width: 100%;
+      height: 50px;
+      margin: 25px 0;
+
+      input {
+        width: 100%;
+        height: 100%;
+        background: rgba(255, 255, 255, 0.05);
+        border: 1.5px solid rgba(255, 255, 255, 0.2);
+        border-radius: 40px;
+        font-size: 15px;
+        color: #f2f2f2;
+        padding: 0 45px 0 20px;
+
+        &::placeholder {
+          color: #bbb;
+        }
+      }
+
+      .icon {
+        position: absolute;
+        right: 18px;
+        top: 50%;
+        transform: translateY(-50%);
+        color: #aaa;
+        font-size: 16px;
+      }
+    }
+
+    .remforgot {
+      display: flex;
+      justify-content: space-between;
+      font-size: 13.5px;
+      margin: -10px 0 15px;
+      color: #ccc;
+
+      label input {
+        accent-color: #b78cf8;
+        margin: 4px;
+      }
+
+      a {
+        color: #b78cf8;
+        text-decoration: none;
+
+        &:hover {
+          text-decoration: underline;
+        }
+      }
+    }
+
+    button {
+      width: 100%;
+      height: 45px;
+      font-weight: 700;
+      font-size: 15px;
+      background: linear-gradient(90deg, #b78cf8, #6a7bfd);
+      border: none;
+      outline: none;
+      border-radius: 40px;
+      color: #fff;
+      cursor: pointer;
+      box-shadow: 0 0 12px rgba(183, 140, 248, 0.25);
+      transition: 0.3s ease;
+
+      &:hover {
+        background: linear-gradient(90deg, #a16cf2, #5d6ffd);
+      }
+    }
+    .signup {
+      text-align: center;
+      margin-top: 20px;
+
+        a {
+          text-align: center;
+          font-size: 14px;
+          font-weight: 600;
+          margin-top: 20px;
+          text-decoration: none;
+          color: #ccc;
+
+
+        &:hover {
+          color: #b78cf8;
+        }
+      }
+    }
+    
+    //   font-size: 13.5px;
+    //   color: #ccc;
+
+    //   p a {
+    //     font-weight: 600;
+
+    //     &:hover {
+    //       color: #b78cf8;
+    //     }
+    //   }
+    // }
+  }
+}

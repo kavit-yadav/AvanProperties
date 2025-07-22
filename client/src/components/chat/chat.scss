@@ -1,0 +1,556 @@
+// .chat {
+//   height: 100%;
+//   display: flex;
+//   flex-direction: column;
+
+//   .messages {
+//     padding: 20px 20px 20px 0px;
+//     flex: 1;
+//     display: flex;
+//     flex-direction: column;
+//     gap: 20px;
+//     overflow-y: scroll;
+
+//     h1 {
+//       font-weight: 300;
+//       color: #f2f2f2; // ✅ Brighter heading text
+//     }
+
+//     .message {
+//       background-color: rgba(255, 255, 255, 0.08); // ✅ Softer message background for glassy look
+//       padding: 8px 12px;
+//       border-radius: 10px;
+//       display: flex;
+//       align-items: center;
+//       gap: 15px;
+//       cursor: pointer;
+
+//       img {
+//         width: 40px;
+//         height: 40px;
+//         border-radius: 50%;
+//         object-fit: cover;
+//       }
+
+//       span {
+//         font-weight: bold;
+//         color: #ffffffe5; // ✅ Highlight name with yellow
+//       }
+ 
+//       p {
+//         color: #eaeaea; // ✅ Light grey for better readability
+//         font-size: 14px;
+//       }
+//     }
+//   }
+
+//   .chatBox {
+//     flex: 1;
+//     background-color: rgba(255, 255, 255, 0.05); // ✅ Light transparent background
+//     display: flex;
+//     flex-direction: column;
+//     justify-content: space-between;
+//     margin-bottom: 20px;
+
+//     .top {
+//       background-color: rgba(255, 255, 255, 0.1); // ✅ subtle contrast
+//       padding: 10px;
+//       font-weight: bold;
+//       display: flex;
+//       align-items: center;
+//       justify-content: space-between;
+//       color: #f8f8f8;
+
+//       .user {
+//         display: flex;
+//         align-items: center;
+//         gap: 20px;
+
+//         img {
+//           width: 45px;
+//           height: 45px;
+//           border-radius: 50%;
+//           object-fit: cover;
+//         }
+//       }
+//       .close {
+//         cursor: pointer;
+//         color: #f8f8f8;
+//         font-size: 18px;
+//       }
+//     }
+
+//     .center {
+//       height: 300px;
+//       overflow: scroll;
+//       padding: 20px;
+//       display: flex;
+//       flex-direction: column;
+//       gap: 20px;
+
+//       .chatMessage {
+//         width: 50%;
+//         background: rgba(255, 255, 255, 0.2); // ✅ Better contrast than #fff on dark bg
+//         padding: 8px 12px;
+//         border-radius: 8px;
+
+//         &.own {
+//           align-self: flex-end;
+//           text-align: right;
+//           background: rgba(0, 0, 0, 0.2); // ✅ Gradient for own messages
+//           color: #ffffff;
+//         }
+
+//         p {
+//           color: #ffffff; // ✅ Message text color
+//         }
+
+//         span {
+//           font-size: 12px;
+//           background-color: rgba(255, 255, 255, 0.1);
+//           padding: 2px 6px;
+//           border-radius: 5px;
+//           color: #ccc; // ✅ Subtle for timestamps
+//         }
+//       }
+//     }
+
+//     .bottom {
+//       border-top: 2px solid rgba(255, 255, 255, 0.1);
+//       height: 60px;
+//       display: flex;
+//       align-items: center;
+//       justify-content: space-between;
+
+//       textarea {
+//         flex: 3;
+//         height: 100%;
+//         border: none;
+//         background: transparent;
+//         color: #fff;
+//         padding: 0 15px;
+//         font-size: 14px;
+
+//         &::placeholder {
+//           color: #aaa;
+//         }
+//       }
+
+//       button {
+//         flex: 1;
+//         background: linear-gradient(90deg, #b78cf8, #6a7bfd);
+//         color: #fff;
+//         height: 100%;
+//         border: none;
+//         cursor: pointer;
+//         font-weight: 600;
+
+//         &:hover {
+//           background: linear-gradient(90deg, #a16cf2, #5d6ffd);
+//         }
+//       }
+//     }
+//   }
+// }
+
+
+
+
+
+
+// .chat {
+//   display: flex;
+//   height: 100%;
+//   width: 100%;
+//   color: #f5f5f5;
+//   backdrop-filter: blur(6px);
+
+//   .messages {
+//     flex: 1;
+//     display: flex;
+//     flex-direction: column;
+//     gap: 12px;
+//     padding: 15px;
+//     overflow-y: auto;
+//     background: rgba(0, 0, 0, 0.3);
+//     border-right: 1px solid rgba(255, 255, 255, 0.08);
+
+//     h1 {
+//       margin-bottom: 10px;
+//       font-size: 22px;
+//       font-weight: 600;
+//       color: #ffffff;
+//     }
+
+//     .message {
+//       display: flex;
+//       align-items: center;
+//       gap: 10px;
+//       padding: 10px;
+//       border-radius: 12px;
+//       background: rgba(255, 255, 255, 0.05);
+//       cursor: pointer;
+//       transition:  0.2s ease;
+
+//       &:hover {
+//         background: rgba(255, 255, 255, 0.1);
+//       }
+
+//       img {
+//         width: 48px;
+//         height: 48px;
+//         border-radius: 50%;
+//         object-fit: cover;
+//         border: 1.5px solid rgba(255, 255, 255, 0.2);
+//       }
+
+//       span {
+//         font-weight: 500;
+//         color: #ffffff;
+//       }
+
+//       p {
+//         margin: 0;
+//         font-size: 14px;
+//         color: #e0e0e0;
+//         max-width: 60%; // 🔥 Prevents long text overflow
+//         overflow: hidden;
+//         text-overflow: ellipsis;
+//         white-space: nowrap;
+//       }
+//     }
+//   }
+
+//   .chatBox {
+//     flex: 2;
+//     display: flex;
+//     flex-direction: column;
+//     justify-content: space-between;
+//     background: rgba(0, 0, 0, 0.4);
+//     backdrop-filter: blur(10px);
+//     border-radius: 0 10px 10px 0;
+//     overflow: hidden;
+
+//     .top {
+//       display: flex;
+//       justify-content: space-between;
+//       align-items: center;
+//       padding: 12px 16px;
+//       background: rgba(255, 255, 255, 0.05);
+//       border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+
+//       .user {
+//         display: flex;
+//         align-items: center;
+//         gap: 10px;
+
+//         img {
+//           width: 40px;
+//           height: 40px;
+//           border-radius: 50%;
+//           object-fit: cover;
+//         }
+
+//         span {
+//           font-size: 16px;
+//           font-weight: 500;
+//           color: #ffffff;
+//         }
+//       }
+
+//       .close {
+//         font-size: 18px;
+//         color: #ff4d4f;
+//         cursor: pointer;
+//         transition: color 0.2s ease;
+
+//         &:hover {
+//           color: #ff1f23;
+//         }
+//       }
+//     }
+
+//     .center {
+//       flex: 1;
+//       padding: 15px;
+//       display: flex;
+//       flex-direction: column;
+//       gap: 12px;
+//       overflow-y: auto;
+
+//       .chatMessage {
+//         max-width: 70%;
+//         word-wrap: break-word; // 🔥 FIX: long words break to next line
+//         overflow-wrap: break-word; // 🔥 Support all browsers
+//         padding: 10px 15px;
+//         border-radius: 20px;
+//         background: linear-gradient(135deg, #ffffff, #f0f0f0); // Receiver bubble
+//         color: #000;
+//         font-size: 15px;
+//         line-height: 1.4;
+
+//         &.own {
+//           align-self: flex-end;
+//           background: linear-gradient(135deg, #833ab4, #fd1d1d, #fcb045); //  Instagram gradient for sender
+//           color: #fff;
+//         }
+
+//         p {
+//           margin: 0;
+//           color: #000;
+//         }
+
+//         span {
+//           display: block;
+//           margin-top: 5px;
+//           font-size: 12px;
+//           color: #000;;
+//         }
+//       }
+//     }
+
+//     .bottom {
+//       display: flex;
+//       border-top: 1px solid rgba(255, 255, 255, 0.08);
+//       background: rgba(255, 255, 255, 0.04);
+
+//       textarea {
+//         flex: 1;
+//         padding: 10px 15px;
+//         border: none;
+//         background: transparent;
+//         color: #fff;
+//         resize: none;
+//         font-size: 14px;
+
+//         &::placeholder {
+//           color: #bbbbbb;
+//         }
+//       }
+
+//       button {
+//         background: linear-gradient(135deg, #833ab4, #fd1d1d, #fcb045); //  Insta send button
+//         border: none;
+//         color: #fff;
+//         padding: 0 20px;
+//         cursor: pointer;
+//         transition: 0.3s ease;
+
+//         &:hover {
+//           filter: brightness(1.1);
+//         }
+//       }
+//     }
+//   }
+// }
+
+// /* Responsive */
+// @media (max-width: 768px) {
+//   .chat {
+//     flex-direction: column;
+
+//     .messages {
+//       border-right: none;
+//       border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+//     }
+
+//     .chatBox {
+//       border-radius: 0 0 10px 10px;
+//     }
+//   }
+// }
+
+
+.chat {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  width: 100%;
+  color: #f5f5f5;
+  background: rgba(0, 0, 0, 0.7);
+  backdrop-filter: blur(6px);
+  transition: all 0.3s ease;
+
+  &.chat-open {
+    .messages {
+      display: none; // 🔥 Hide chat list completely
+    }
+    .chatBox {
+      display: flex;
+    }
+  }
+
+  .messages {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    padding: 15px;
+    overflow-y: auto;
+
+    h1 {
+      margin-bottom: 10px;
+      font-size: 22px;
+      font-weight: 600;
+      color: #ffffff;
+    }
+
+    .message {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      padding: 10px;
+      border-radius: 12px;
+      background: rgba(255, 255, 255, 0.05);
+      cursor: pointer;
+      transition: background 0.2s ease;
+
+      &:hover {
+        background: rgba(255, 255, 255, 0.1);
+      }
+
+      img {
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        object-fit: cover;
+        border: 2px solid rgba(255, 255, 255, 0.2);
+      }
+
+      .message-info {
+        display: flex;
+        flex-direction: column;
+        overflow: hidden;
+
+        span {
+          font-weight: 500;
+          color: #ffffff;
+        }
+
+        p {
+          margin: 0;
+          font-size: 14px;
+          color: #cccccc;
+          overflow: hidden;
+          text-overflow: ellipsis;
+          white-space: nowrap;
+        }
+      }
+    }
+  }
+
+  .chatBox {
+    display: none; // 🔥 Hidden until chat is opened
+    flex-direction: column;
+    height: 100%;
+    width: 100%;
+    background: rgba(0, 0, 0, 0.85);
+    backdrop-filter: blur(8px);
+
+    .top {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 12px 16px;
+      background: rgba(255, 255, 255, 0.05);
+
+      .user {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+
+        img {
+          width: 45px;
+          height: 45px;
+          border-radius: 50%;
+          object-fit: cover;
+        }
+
+        span {
+          font-size: 16px;
+          font-weight: 500;
+          color: #ffffff;
+        }
+      }
+
+      .back {
+        cursor: pointer;
+        font-size: 16px;
+        color: #ff5f5f;
+        &:hover {
+          color: #ff2e2e;
+        }
+      }
+    }
+
+    .center {
+      flex: 1;
+      padding: 15px;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      overflow-y: auto;
+
+      .chatMessage {
+        max-width: 90%;
+        word-wrap: break-word; // 🔥 Breaks long words
+        overflow-wrap: break-word;
+        padding: 10px 15px;
+        border-radius: 20px;
+        background: rgb(255, 255, 255);
+        color: #ffffff;
+        align-self: flex-start;
+        // text-Align:"right";
+
+        &.own {
+          align-self: flex-end;
+          background: rgb(255, 255, 255);
+          color: #fff;
+          // text-Align:"left";
+        }
+
+        p {
+          margin: 0;
+          color: black;
+        }
+
+        span {
+          display: block;
+          margin-top: 5px;
+          font-size: 12px;
+          color: grey;
+        }
+      }
+    }
+
+    .bottom {
+      display: flex;
+      border-top: 1px solid rgba(255, 255, 255, 0.1);
+
+      textarea {
+        flex: 1;
+        padding: 10px 15px;
+        border: none;
+        background: transparent;
+        color: #fff;
+        resize: none;
+        font-size: 14px;
+
+        &::placeholder {
+          color: #bbbbbb;
+        }
+      }
+
+      button {
+        background: linear-gradient(135deg, #833ab4, #fd1d1d, #fcb045);
+        border: none;
+        color: #fff;
+        padding: 0 20px;
+        cursor: pointer;
+        &:hover {
+          filter: brightness(1.2);
+        }
+      }
+    }
+  }
+}

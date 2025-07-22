@@ -1,0 +1,20 @@
+@mixin phone{
+    @media (max-width:675px){
+        @content;
+    }
+}
+@mixin halfdesktop{
+    @media (max-width:930px){
+        @content;
+    }
+}
+@mixin threeforthdesktop{
+    @media (max-width:1180px){
+        @content;
+    }
+}
+@mixin desktop{
+    @media (max-width:1000px){
+        @content;
+    }
+}

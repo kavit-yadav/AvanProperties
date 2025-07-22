@@ -1,0 +1,406 @@
+// .contact-me {
+//   background: linear-gradient(180deg, #16163a, #0a0a23);
+//   color: #b388f9;
+//   min-height: 100vh;
+//   padding: 40px 20px;
+//   display: flex;
+//   justify-content: center;
+//   align-items: flex-start;
+//   gap: 50px;
+//   flex-wrap: wrap;
+
+//   // LEFT SECTION
+//   .left {
+//     flex: 1.5;
+//     text-align: left;
+//     animation: fadeInLeft 1.2s ease forwards;
+
+//     .animated-text {
+//       font-size: 3rem;
+//       background: linear-gradient(90deg, #b78cf8, #6a7bfd);
+//       background-clip: text;
+//       -webkit-text-fill-color: transparent;
+//       margin-bottom: 10px;
+
+//       &::after {
+//         content: "|";
+//         animation: blink 1s infinite;
+//         background: linear-gradient(90deg, #b78cf8, #6a7bfd);
+//         background-clip: text;
+//         -webkit-text-fill-color: transparent;
+//         margin-left: 5px;
+//       }
+//     }
+
+//     .tagline {
+//       font-size: 1.5rem;
+//       color: #6a7bfd;
+//       margin-bottom: 15px;
+//     }
+
+//     .education {
+//       font-size: 1.2rem;
+//       color: #f0e6ff;
+//       margin-bottom: 20px;
+//       font-weight: 500;
+//     }
+
+//     p {
+//       font-size: 1.2rem;
+//       color: #f0e6ff;
+//       line-height: 1.8;
+//     }
+//   }
+
+//   // RIGHT SECTION
+//   .right {
+//     flex: 1;
+//     text-align: left;
+//     animation: fadeInRight 1.5s ease forwards;
+
+//     h2 {
+//       font-size: 2rem;
+//       color: #6a7bfd;
+//       margin-bottom: 15px;
+//     }
+
+//     .contact-info {
+//       display: flex;
+//       flex-direction: column;
+//       gap: 15px;
+
+//       .contact-card {
+//         display: flex;
+//         align-items: center;
+//         gap: 10px;
+//         background: rgba(255, 255, 255, 0.05);
+//         padding: 12px 15px;
+//         border-radius: 8px;
+//         color: #f0e6ff;
+//         text-decoration: none;
+//         box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+//         transition: background 0.4s ease, transform 0.3s ease;
+
+//         .icon {
+//           color: #ffd966;
+//           font-size: 1.5rem;
+//         }
+
+//         &:hover {
+//           background: linear-gradient(90deg, #b78cf8, #6a7bfd);
+//           transform: translateY(-4px) scale(1.03);
+//           color: #ffffff;
+
+//           .icon {
+//             color: #ffffff;
+//           }
+//         }
+//       }
+//     }
+
+//     .cta {
+//       margin-top: 20px;
+//       font-size: 1.2rem;
+//       color: #6a7bfd;
+//       font-style: italic;
+//     }
+//   }
+
+//   // Responsive adjustments
+//   @media (max-width: 900px) {
+//     flex-direction: column;
+//     align-items: center;
+
+//     .left,
+//     .right {
+//       max-width: 100%;
+//       text-align: center;
+
+//       .animated-text::after {
+//         display: inline-block;
+//       }
+
+//       h1, h2 {
+//         text-align: center;
+//       }
+
+//       p, .contact-info {
+//         text-align: center;
+//         align-items: center;
+//       }
+//     }
+//   }
+// }
+
+// // Blinking cursor animation
+// @keyframes blink {
+//   0%, 50%, 100% {
+//     opacity: 1;
+//   }
+//   25%, 75% {
+//     opacity: 0;
+//   }
+// }
+
+// // Fade animations
+// @keyframes fadeInLeft {
+//   0% {
+//     opacity: 0;
+//     transform: translateX(-30px);
+//   }
+//   100% {
+//     opacity: 1;
+//     transform: translateX(0);
+//   }
+// }
+
+// @keyframes fadeInRight {
+//   0% {
+//     opacity: 0;
+//     transform: translateX(30px);
+//   }
+//   100% {
+//     opacity: 1;
+//     transform: translateX(0);
+//   }
+// }
+
+
+@use "../../responsive.scss";
+
+.contact-me {
+  background: linear-gradient(135deg, #0b0c1e, #131331);
+    backdrop-filter: blur(12px);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.7);
+  color: #b388f9;
+  min-height: 100vh;
+  padding: 40px 20px;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 50px;
+  flex-wrap: wrap;
+
+  // LEFT SECTION
+  .left {
+    flex: 1.5;
+    text-align: left;
+    animation: fadeInLeft 1.2s ease forwards;
+
+    .animated-text {
+      font-size: 3rem;
+      background: linear-gradient(90deg, #b78cf8, #6a7bfd);
+      background-clip: text;
+      -webkit-text-fill-color: transparent;
+      margin-bottom: 10px;
+
+      &::after {
+        content: "|";
+        animation: blink 1s infinite;
+        background: linear-gradient(90deg, #b78cf8, #6a7bfd);
+        background-clip: text;
+        -webkit-text-fill-color: transparent;
+        margin-left: 5px;
+      }
+
+      @include responsive.threeforthdesktop {
+        font-size: 1.75rem;
+      }
+
+      @include responsive.halfdesktop {
+        font-size: 1.75rem;
+      }
+
+      @include responsive.phone {
+        font-size: 1.5rem;
+      }
+    }
+
+    .tagline {
+      font-size: 1.5rem;
+      color: #6a7bfd;
+      margin-bottom: 15px;
+
+      @include responsive.phone {
+        font-size: 1.3rem;
+      }
+    }
+
+    .education {
+      font-size: 1.2rem;
+      color: #f0e6ff;
+      margin-bottom: 20px;
+      font-weight: 500;
+
+      @include responsive.phone {
+        font-size: 1rem;
+      }
+    }
+
+    p {
+      font-size: 1.2rem;
+      color: #f0e6ff;
+      line-height: 1.8;
+
+      @include responsive.halfdesktop {
+        font-size: 1.1rem;
+      }
+
+      @include responsive.phone {
+        font-size: 1rem;
+      }
+    }
+  }
+
+  // RIGHT SECTION
+  .right {
+    flex: 1;
+    text-align: left;
+    animation: fadeInRight 1.5s ease forwards;
+
+    h2 {
+      font-size: 2rem;
+      color: #6a7bfd;
+      margin-bottom: 15px;
+
+      @include responsive.halfdesktop {
+        font-size: 1.7rem;
+      }
+
+      @include responsive.phone {
+        font-size: 1.5rem;
+      }
+    }
+
+    .contact-info {
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+
+      .contact-card {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        background: rgba(255, 255, 255, 0.05);
+        padding: 12px 15px;
+        border-radius: 8px;
+        color: #f0e6ff;
+        text-decoration: none;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+        transition: background 0.4s ease, transform 0.3s ease;
+
+        .icon {
+          color: #ffd966;
+          font-size: 1.5rem;
+        }
+
+        &:hover {
+          background: linear-gradient(90deg, #b78cf8, #6a7bfd);
+          transform: translateY(-4px) scale(1.03);
+          color: #ffffff;
+
+          .icon {
+            color: #ffffff;
+          }
+        }
+
+        @include responsive.phone {
+          font-size: 0.95rem;
+          padding: 10px 12px;
+        }
+      }
+    }
+
+    .cta {
+      margin-top: 20px;
+      font-size: 1.2rem;
+      color: #6a7bfd;
+      font-style: italic;
+
+      @include responsive.phone {
+        font-size: 1rem;
+      }
+    }
+  }
+
+  // Responsive adjustments
+  @include responsive.halfdesktop {
+    gap: 30px;
+    padding: 30px 15px;
+  }
+
+  @include responsive.phone {
+    flex-direction: column;
+    // align-items: center;
+
+    .left,
+    .right {
+      max-width: 100%;
+      // text-align: center;
+
+      .animated-text::after {
+        display: inline-block;
+      }
+
+      h1, h2 {
+        // text-align: center;
+      }
+
+      p, .contact-info {
+        // text-align: center;
+        // align-items: center;
+      }
+    }
+  }
+
+  // Fallback for very small screens (overflow)
+  @media (max-width: 360px) {
+    overflow-x: auto;
+    .left, .right {
+      min-width: 300px;
+    }
+  }
+}
+
+// Blinking cursor animation
+@keyframes blink {
+  0%, 50%, 100% {
+    opacity: 1;
+  }
+  25%, 75% {
+    opacity: 0;
+  }
+}
+
+// Fade animations
+@keyframes fadeInLeft {
+  0% {
+    opacity: 0;
+    transform: translateX(-30px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes fadeInRight {
+  0% {
+    opacity: 0;
+    transform: translateX(30px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+
+
+
+
+
+
+
+
+
